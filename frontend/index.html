@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Películas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gestión de Películas</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="reporte.html">Reporte</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Formulario para agregar/editar -->
+        <section id="seccion-formulario">
+            <h2>Agregar Película</h2>
+            <form id="formulario-pelicula">
+                <input type="hidden" id="pelicula-id">
+
+                <label for="titulo">Título *</label>
+                <input type="text" id="titulo" placeholder="Ej: Inception">
+
+                <label for="anio">Año *</label>
+                <input type="number" id="anio" placeholder="Ej: 2010">
+
+                <label for="genero">Género *</label>
+                <input type="text" id="genero" placeholder="Ej: Ciencia Ficción">
+
+                <label for="director">Director *</label>
+                <input type="text" id="director" placeholder="Ej: Christopher Nolan">
+
+                <label for="sinopsis">Sinopsis</label>
+                <textarea id="sinopsis" placeholder="Breve descripción..."></textarea>
+
+                <label for="puntuacion">Puntuación (1-5)</label>
+                <input type="number" id="puntuacion" min="1" max="5">
+
+                <label for="estado">Estado</label>
+                <select id="estado">
+                    <option value="pendiente">Pendiente</option>
+                    <option value="viendo">Viendo</option>
+                    <option value="vista">Vista</option>
+                </select>
+
+                <button type="submit">Guardar Película</button>
+                <button type="button" id="btn-cancelar">Cancelar</button>
+            </form>
+        </section>
+
+        <!-- Listado de películas -->
+        <section id="seccion-listado">
+            <h2>Mis Películas</h2>
+            <div id="lista-peliculas">
+                <!-- Las películas se cargan dinámicamente con JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Trabajo Práctico Integrador — 2025</p>
+    </footer>
+
+    <script src="app.js" defer></script>
+
+</body>
+</html>

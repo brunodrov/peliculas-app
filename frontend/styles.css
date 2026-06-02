@@ -1,0 +1,290 @@
+/* ===== VARIABLES Y RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #1a1a2e;
+    --color-secundario: #16213e;
+    --color-acento: #e94560;
+    --color-texto: #eaeaea;
+    --color-texto-suave: #a0a0a0;
+    --color-fondo: #0f3460;
+    --color-tarjeta: #1a1a2e;
+    --borde-radio: 8px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-primario);
+    color: var(--color-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: var(--color-secundario);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--color-acento);
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: var(--borde-radio);
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--color-acento);
+}
+
+/* ===== MAIN ===== */
+main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* ===== FORMULARIO ===== */
+#seccion-formulario {
+    background-color: var(--color-secundario);
+    padding: 30px;
+    border-radius: var(--borde-radio);
+    width: 350px;
+    min-width: 350px;
+}
+
+#seccion-formulario h2 {
+    color: var(--color-acento);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: var(--color-primario);
+    border: 1px solid var(--color-fondo);
+    border-radius: var(--borde-radio);
+    color: var(--color-texto);
+    font-size: 0.95rem;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: var(--color-acento);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ===== BOTONES ===== */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--borde-radio);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button[type="submit"] {
+    background-color: var(--color-acento);
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button[type="button"] {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    width: 100%;
+}
+
+/* ===== LISTADO ===== */
+#seccion-listado {
+    flex: 1;
+}
+
+#seccion-listado h2 {
+    color: var(--color-acento);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+#lista-peliculas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ===== TARJETA DE PELÍCULA ===== */
+.tarjeta {
+    background-color: var(--color-secundario);
+    border-radius: var(--borde-radio);
+    padding: 20px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta h3 {
+    color: var(--color-acento);
+    font-size: 1.1rem;
+}
+
+.tarjeta p {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+.tarjeta .sinopsis {
+    color: var(--color-texto);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.tarjeta .estado {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.estado-pendiente { background-color: #f0a500; color: #000; }
+.estado-viendo    { background-color: #0077b6; color: #fff; }
+.estado-vista     { background-color: #2d6a4f; color: #fff; }
+
+.tarjeta .acciones {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tarjeta .acciones button {
+    flex: 1;
+    padding: 8px;
+    font-size: 0.85rem;
+}
+
+.btn-editar {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.btn-eliminar {
+    background-color: var(--color-acento);
+    color: white;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--color-secundario);
+    text-align: center;
+    padding: 20px;
+    color: var(--color-texto-suave);
+    font-size: 0.85rem;
+}
+
+/* ===== REPORTE ===== */
+#seccion-reporte {
+    background-color: var(--color-secundario);
+    padding: 30px;
+    border-radius: var(--borde-radio);
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+#seccion-reporte h2 {
+    color: var(--color-acento);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+#seccion-reporte p {
+    color: var(--color-texto-suave);
+    margin-bottom: 25px;
+}
+
+#tabla-reporte {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.fila-reporte {
+    background-color: var(--color-primario);
+    border-radius: var(--borde-radio);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fila-reporte .genero {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+.fila-reporte .cantidad {
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+.fila-reporte .promedio {
+    background-color: var(--color-acento);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
